@@ -1,0 +1,37 @@
+name: one-hop redirect check
+description: Fail the job when any old URL in a redirect map takes more than one hop, loops, or ends on a 404.
+author: Synapse Research Ltd
+branding:
+  icon: corner-down-right
+  color: green
+inputs:
+  csv:
+    description: Path to the redirect map (old,new per line). Several paths can be separated by spaces.
+    required: true
+  base:
+    description: Site to test, for example https://example.com
+    required: true
+  auth:
+    description: Optional user:password for HTTP basic auth on a staging host. Pass it from a secret.
+    required: false
+    default: ""
+  args:
+    description: Extra command line flags, for example "--allow-temporary --workers 4".
+    required: false
+    default: ""
+runs:
+  using: composite
+  steps:
+    - name: Check redirects
+      shell: bash
+      env:
+        ONE_HOP_CSV: ${{ inputs.csv }}
+        ONE_HOP_BASE: ${{ inputs.base }}
+        ONE_HOP_AUTH: ${{ inputs.auth }}
+        ONE_HOP_ARGS: ${{ inputs.args }}
+        PYTHONPATH: ${{ github.action_path }}/src
+      run: |
+        # Inputs arrive as environment variables so a value can never be run as shell code.
+        read -r -a csvs <<< "$ONE_HOP_CSV"
+        read -r -a extra <<< "$ONE_HOP_ARGS"
+        python3 -m one_hop "${csvs[@]}" --base "$ONE_HOP_BASE" "${extra[@]}"

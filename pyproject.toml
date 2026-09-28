@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "one-hop"
+version = "0.1.0"
+description = "Check a redirect map: every old URL must reach its new URL in exactly one hop, and the new URL must answer 200."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [{ name = "Synapse Research Ltd" }]
+keywords = ["redirects", "301", "seo", "site-migration", "ci"]
+classifiers = [
+  "Environment :: Console",
+  "Programming Language :: Python :: 3",
+  "Topic :: Internet :: WWW/HTTP :: Site Management :: Link Checking",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://synapsereality.io/open-source/one-hop/"
+Documentation = "https://synapsereality.io/open-source/one-hop/"
+
+[project.scripts]
+one-hop = "one_hop.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
