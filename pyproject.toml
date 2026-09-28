@@ -25,6 +25,8 @@ test = ["pytest>=8"]
 [project.urls]
 Homepage = "https://synapsereality.io/open-source/one-hop/"
 Documentation = "https://synapsereality.io/open-source/one-hop/"
+Repository = "https://github.com/synapsereality/one-hop"
+Issues = "https://github.com/synapsereality/one-hop/issues"
 
 [project.scripts]
 one-hop = "one_hop.cli:main"

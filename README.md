@@ -8,7 +8,7 @@ fails: a chain, a loop, a 404, a redirect to the wrong page. The exit code is th
 Docs: https://synapsereality.io/open-source/one-hop/
 
 ```bash
-pip install one-hop    # not on PyPI yet, see "Install from source" below
+pip install one-hop
 one-hop redirects.csv --base https://example.com
 ```
 
@@ -99,7 +99,7 @@ Trailing slashes count. `/about` and `/about/` are two URLs, and a map that says
 
 ```yaml
 - uses: actions/checkout@v4
-- uses: bensynapse/one-hop@v0.1.0
+- uses: synapsereality/one-hop@v0.1.0
   with:
     csv: redirects.csv
     base: https://staging.example.com
@@ -113,7 +113,7 @@ installs nothing.
 ## Install from source
 
 ```bash
-git clone https://github.com/bensynapse/one-hop
+git clone https://github.com/synapsereality/one-hop
 cd one-hop
 pip install .
 ```

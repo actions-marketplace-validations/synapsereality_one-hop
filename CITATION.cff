@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "one-hop"
+abstract: "Check a redirect map: every old URL must reach its new URL in exactly one hop, and the new URL must answer 200."
+authors:
+  - name: "Synapse Research Ltd"
+    website: "https://synapsereality.io/"
+version: "0.1.0"
+license: MIT
+repository-code: "https://github.com/synapsereality/one-hop"
+url: "https://synapsereality.io/open-source/one-hop/"
+keywords:
+  - "redirects"
+  - "site migration"
+  - "SEO"
+  - "HTTP"
+  - "GitHub Action"
+# Uncomment after the first Zenodo release and put in the concept DOI Zenodo shows:
+# doi: 10.5281/zenodo.NNNNNNN

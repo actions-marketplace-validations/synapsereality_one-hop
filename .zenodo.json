@@ -1,0 +1,30 @@
+{
+  "title": "one-hop: Check a redirect map: every old URL must reach its new URL in exactly one hop, and the new URL must answer 200.",
+  "description": "Check a redirect map: every old URL must reach its new URL in exactly one hop, and the new URL must answer 200. Documentation: https://synapsereality.io/open-source/one-hop/",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Synapse Research Ltd"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "redirects",
+    "site migration",
+    "SEO",
+    "HTTP",
+    "GitHub Action"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://synapsereality.io/open-source/one-hop/",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/synapsereality/one-hop",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
