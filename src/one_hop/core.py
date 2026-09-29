@@ -17,7 +17,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from urllib.parse import urljoin, urlsplit, urlunsplit
 
-__all__ = ["Rule", "Hop", "Result", "Checker", "read_rules", "normalise"]
+__all__ = ["Checker", "Hop", "Result", "Rule", "normalise", "read_rules"]
 
 USER_AGENT = "one-hop/0.1 (+https://synapsereality.io/open-source/one-hop/)"
 PERMANENT = (301, 308)
@@ -147,7 +147,7 @@ class Checker:
         self.allow_temporary = allow_temporary
         self.path_only = path_only
         self.method = method.upper()
-        self._ssl = ssl._create_unverified_context() if insecure else ssl.create_default_context()  # noqa: S323
+        self._ssl = ssl._create_unverified_context() if insecure else ssl.create_default_context()
 
     # ------------------------------------------------------------------ http ---
     def request(self, url: str, method: str | None = None) -> Hop:

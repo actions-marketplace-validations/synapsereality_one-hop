@@ -3,4 +3,4 @@
 from .core import Checker, Hop, Result, Rule, normalise, read_rules
 
 __version__ = "0.1.0"
-__all__ = ["Checker", "Hop", "Result", "Rule", "normalise", "read_rules", "__version__"]
+__all__ = ["Checker", "Hop", "Result", "Rule", "__version__", "normalise", "read_rules"]
